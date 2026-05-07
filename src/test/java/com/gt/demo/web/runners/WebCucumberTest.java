@@ -7,6 +7,12 @@ import io.cucumber.testng.PickleWrapper;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+/**
+ * Web Cucumber scenario'larını TestNG üzerinden çalıştıran runner sınıfı.
+ *
+ * <p>features ve glue ayarları sayesinde web feature dosyaları, step definition'lar ve hook'lar
+ * birlikte çalışır.
+ */
 @CucumberOptions(
     features = "classpath:features/web/",
     glue = {"com.gt.demo.web"},
@@ -19,12 +25,14 @@ import org.testng.annotations.Test;
     tags = "@web and @smoke and not @wip")
 public class WebCucumberTest extends AbstractTestNGCucumberTests {
 
+  // TestNG her Cucumber scenario'yu ayrı bir test gibi çalıştırır.
   @Override
   @Test(dataProvider = "scenarios")
   public void runScenario(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
     super.runScenario(pickleWrapper, featureWrapper);
   }
 
+  // Web scenario'ları paralel çalışabilir; WebDriverContext bu yüzden ThreadLocal kullanır.
   @Override
   @DataProvider(parallel = true)
   public Object[][] scenarios() {

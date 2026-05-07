@@ -5,16 +5,23 @@ import com.gt.demo.web.base.WebDriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+/**
+ * Cucumber hook sınıfı.
+ *
+ * <p>@web tag'ine sahip scenario'lar için browser yaşam döngüsünü yönetir. Böylece step
+ * definition veya page class içinde browser başlatma/kapatma kodu yazılmaz.
+ */
 public class WebHooks {
 
+  // Her @web scenario başlamadan önce yeni bir WebDriver oluşturulur ve context'e kaydedilir.
   @Before("@web")
   public void startWeb() {
     WebDriverContext.set(WebDriverFactory.create());
   }
 
+  // Her @web scenario bittikten sonra browser kapatılır ve thread-local driver temizlenir.
   @After("@web")
   public void stopWeb() {
     WebDriverContext.clear();
   }
 }
-

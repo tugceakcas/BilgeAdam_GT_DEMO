@@ -4,6 +4,8 @@
 - Java 21 is required (`mvn -v` must show Java 21).
 - Web and API examples require internet access (public demo targets).
 - Selenium may log CDP version warnings on new Chrome builds; this does not block core web flows in this repo.
+- Codespaces uses `.devcontainer/` to install browser and noVNC dependencies. Existing Codespaces
+  created before this setup should be rebuilt.
 
 ## Mobile limits
 - Mobile tests are not run by default; they require `-Pmobile`.

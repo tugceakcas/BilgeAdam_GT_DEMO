@@ -27,6 +27,11 @@ Mini corporate-style automation framework for a 3-day BA/TA training.
 - API only: `mvn failsafe:integration-test@api-tests failsafe:verify@api-tests`
 - Mobile profile: `mvn -Pmobile surefire:test@mobile-tests`
 
+## Codespaces Training Environment
+- Participants should use the default headless web config in Codespaces.
+- Trainers can show a visible browser through noVNC with `scripts/start-novnc.sh`.
+- Full setup notes: `docs/codespaces-training-setup.md`
+
 ## Mobile Setup Notes
 - Start Appium server and emulator/simulator first.
 - Configure app binaries in `src/test/resources/config/framework.properties`.
@@ -49,6 +54,7 @@ Mini corporate-style automation framework for a 3-day BA/TA training.
 - BDD guidance: `docs/bdd-examples.md`
 - Anti-pattern guide: `docs/bad-examples-guide.md`
 - VS Code/Codespaces setup: `docs/vscode-karate-cucumber-setup.md`
+- Codespaces training setup: `docs/codespaces-training-setup.md`
 - Demo flow: `docs/trainer-demo-order.md`
 - Limitations: `docs/known-limitations.md`
 - Target rationale: `docs/target-selection-summary.md`

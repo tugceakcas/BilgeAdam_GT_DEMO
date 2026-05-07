@@ -17,6 +17,13 @@
   ],
   "java.test.config": [
     {
+      "name": "web-headless",
+      "testKind": "testng",
+      "vmArgs": [
+        "-Dwebdriver.headless=true"
+      ]
+    },
+    {
       "name": "web-novnc",
       "testKind": "testng",
       "env": {
@@ -27,5 +34,5 @@
       ]
     }
   ],
-  "java.test.defaultConfig": "web-novnc"
+  "java.test.defaultConfig": "web-headless"
 }

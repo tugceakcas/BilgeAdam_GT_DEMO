@@ -43,7 +43,21 @@ Only workspace-level mapping should remain active.
 
 ## How to Run
 
-- Web: prefer class-level run from `WebCucumberTest.java` using Java Test Runner; verify output includes `com.gt.demo.web.runners.WebCucumberTest`
+- Web: prefer class-level run from `WebCucumberTest.java` using Java Test Runner; the default workspace config runs it headless.
 - API: run from `ApiKarateTest.java` using Java Test Runner (or Karate run action)
 
 `Problems` warnings tagged as `cucumber.undefined-step` in API feature files are lint diagnostics. They are not proof that API tests were executed by Cucumber.
+
+## Visible Browser Demo
+
+Codespaces uses the default `web-headless` config for participant stability.
+
+For trainer-only browser demos, start noVNC first:
+
+```bash
+scripts/start-novnc.sh
+```
+
+Then open the forwarded port `6080` and run `WebCucumberTest.java` with the `web-novnc` Java test config.
+
+See `docs/codespaces-training-setup.md` for the full flow.
