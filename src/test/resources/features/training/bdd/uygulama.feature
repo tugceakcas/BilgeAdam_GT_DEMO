@@ -1,6 +1,6 @@
     @bdd
 Feature: ParaBank Login Functionality
-    @smoke 
+    @smoke @tag2
 Scenario: Successfully login 2
     Given : I am on ParaBank login page
     When : I login with username "valid-user" and password "valid-pass"
