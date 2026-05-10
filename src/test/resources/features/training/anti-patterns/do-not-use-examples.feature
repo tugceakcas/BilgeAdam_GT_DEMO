@@ -1,6 +1,6 @@
-@training @anti-pattern @do-not-use
-Feature: Anti-pattern examples for classroom debugging
-  These scenarios are intentionally bad and should not be used as implementation templates.
+@training @bdd
+Feature: Educational examples
+
 
   Scenario: Wrong wait strategy (DO NOT USE)
     Given I open a dynamic loading page
